@@ -107,7 +107,7 @@
       </dt>
       <dt>В ES 6, се въвеждат и нови думи за деклариране на променливи: <code class="note">let</code> и <code class="note">const</code>, които ще разгледаме след като изясним понятията "scope" и "hoisting".</dt>
       <dt>Ако желаем, може при създаването на променливата, да запишем в нея конкретна стойност - т.е. да <span class="note">дефинираме</span>(<span>инициализираме</span>) променливата.</dt>
-      <dt>В JavaScript, една променлива винаги е дефинирана, тъй като ако не зададем екслплицитно стойност при декларацията, то в променливата се записва стойността <span class="note">undefined</span>.</dt>
+      <dt>В JavaScript, една променлива винаги е дефинирана, тъй като ако не зададем експлицитно стойност при декларацията, то в променливата се записва стойността <span class="note">undefined</span>.</dt>
     </dl>
     <pre><code rel="JS">
       let x;      // деклариране на променливата x
@@ -123,7 +123,7 @@
       x = 10; // (Error in strict mode)
       console.log(x);
     </code></pre>
-    <p class="note">Това се счита за изключително лоша практика, тъй като се създава "<strong>глобална променлива</strong>" (в темата за <a href="../../../pages/themes/beginners/JS_Functions/JS_Functions.html#Scope">scope</a>, ще разгледаме защо), и в новите версии на езика (от ЕС5.1) при използването на strict mode, това би <strong>довело до грешка</strong>!</p>
+    <p class="note">Това се счита за изключително лоша практика, тъй като се създава "<strong>глобална променлива</strong>" (в темата за <a href="../../../pages/themes/beginners/JS_Functions/JS_Functions.html#Scope">scope</a>, ще разгледаме защо), и в новите версии на езика (от ES5.1) при използването на strict mode, това би <strong>довело до грешка</strong>!</p>
   </section>
   <section><h3 class="advanced">Strict Mode</h3>
     <pre><code rel="JS" class="js">
@@ -182,13 +182,13 @@
     <pre><code rel="JS">
       let x;  // ок
       let $x; // позволено, но не се препоръчва
-      let userName; // ок
+      let userName; // OK
       let user name; // SyntaxError!
-      let username; //  ok, но е по-трудно четима и не е според конвенцията (lowerCamelCase)
+      let username; //  OK, но е по-трудно четима и не е според конвенцията (lowerCamelCase)
       let user-first-name; //SyntaxError
-      let user_first_name; //ok, но не е според конвенцията (lowerCamelCase)
-      let userFirstName; //ok
-      let x234AB$$53; // синтактично е ок, но какво ли означава?
+      let user_first_name; //OK, но не е според конвенцията (lowerCamelCase)
+      let userFirstName; //OK
+      let x234AB$$53; // синтактично е OK, но какво ли означава?
     </code></pre>
   </section>
 </section>
@@ -223,7 +223,7 @@
   </section>
   <section><h3>numeric separator</h3>
     <dl class="fa">
-      <dt class="note">numeric separator е все още в <a href="https://github.com/tc39/proposal-numeric-separator">Proposal Stage</a>. Преди да го използвате, се уверете че поддръжката му от браузерите ви удовлетворява: <a href="https://caniuse.com/#search=numeric%20separator">numeric separator @caniuse.com</a></dt>
+      <dt class="note">numeric separator е все още в <a href="https://github.com/tc39/proposal-numeric-separator">Proposal Stage</a>. Преди да го използвате, се уверете че поддръжката му от браузърите ви удовлетворява: <a href="https://caniuse.com/#search=numeric%20separator">numeric separator @caniuse.com</a></dt>
     </dl>
     <pre><code rel="JS">
       let budget = 1_234_000_000
@@ -237,8 +237,8 @@
     <pre><code rel="JS">
       let userName = 'Ada Byron'; // ок
       let nickName = "LadyLovelace"; //ок
-      let quotGood = 'И той отсече - "Ще вали!"'; //ок
-      let quotBad = "И той отсече - "Ще вали!""; //SyntaxError
+      let quoteGood = 'И той отсече - "Ще вали!"'; //ок
+      let quoteBad = "И той отсече - "Ще вали!""; //SyntaxError
       let foo = "What's the time?" //ок
     </code></pre>
   </section>
@@ -248,7 +248,7 @@
   <section><h3>Някои основни ескейп последователности:</h3>
     <table style="font-size: .8em">
       <tr><td><span class="note">\n</span>:</td><td>line feed</td><td>нов ред</td></tr>
-      <tr><td><span class="note">\t</span>:</td><td>horizontal tab</td><td>таб</td></tr>
+      <tr><td><span class="note">\t</span>:</td><td>horizontal tab</td><td>tab</td></tr>
       <tr><td><span class="note">\"</span>:</td><td>Double quotation mark</td><td>двойни кавички, които не се тълкуват като специален символ</td></tr>
       <tr><td><span class="note">\'</span>:</td><td>Single quotation mark</td><td>кавичка, която не се тълкува като специален символ</td></tr>
       <tr><td><span class="note">\\</span>:</td><td>backslash</td><td>не се тълкува като специален символ</td></tr>
@@ -269,38 +269,38 @@
       4. Ето какво прави "\'": --->'<---
     </code></pre>
   </section>
-  <section><h3>Multiline strings?</h3>
+  <section><h3>Multi-line strings?</h3>
     <dl class="fa" style="font-size: .8em;">
       <dt>Забележете, че в низовете не може да използваме буквално символ за нов ред (клавиша enter)</dt>
       <dt>Интерпретатора очаква затварящата кавичка ( " или ' ) да бъде на същия ред и ако не я намери ще даде грешка:</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
-      let lyrics = "В късна нощ — преди години — сам над книгите старинни,
-            безотраден, вниквах, жаден, в знания незнайни тук; —
-            скръбен, търсех без сполука мир във тайната наука —
+      let lyrics = "В късна нощ - преди години - сам над книгите старинни,
+            безотраден, вниквах, жаден, в знания незнайни тук; -
+            скръбен, търсех без сполука мир във тайната наука -
             но оборен в сънна скука, чух внезапно бавен звук."
       // Uncaught SyntaxError: Invalid or unexpected toke
       </code></pre>
       <dt>но можем да заместим 'enter' с "\n" в низа:</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
-        let lyrics = "В късна нощ — преди години — сам над книгите старинни,\nбезотраден, вниквах, жаден, в знания незнайни тук; —\nскръбен, търсех без сполука мир във тайната наука —\nно оборен в сънна скука, чух внезапно бавен звук."
+        let lyrics = "В късна нощ - преди години - сам над книгите старинни,\nбезотраден, вниквах, жаден, в знания незнайни тук; -\nскръбен, търсех без сполука мир във тайната наука -\nно оборен в сънна скука, чух внезапно бавен звук."
       </code></pre>
-      <dt>или да изпозваме конкатениране (разгледано в следващите слайдове):</dt>
+      <dt>или да използваме конкатенация (разгледано в следващите слайдове):</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
-        let lyrics = "В късна нощ — преди години — сам над книгите старинни," +
-               "безотраден, вниквах, жаден, в знания незнайни тук; —" +
-               "скръбен, търсех без сполука мир във тайната наука —" +
+        let lyrics = "В късна нощ - преди години - сам над книгите старинни," +
+               "безотраден, вниквах, жаден, в знания незнайни тук; -" +
+               "скръбен, търсех без сполука мир във тайната наука -" +
                "но оборен в сънна скука, чух внезапно бавен звук.";
       </code></pre>
     </dl>
   </section>
   <section><h3>Template Strings</h3>
     <dl class="fa" style="font-size: .8em;">
-      <dt>В ES6 се въвежда и така наречения "<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template string</a>", където низа се огражда в <code><b class="note">`</b> и <span class="note">`</span></code> (<a href="https://superuser.com/questions/254076/how-do-i-type-the-tick-and-backtick-characters-on-windows" title="how-do-i-type-the-tick-and-backtick-characters-on-windows">backticks</a>).</dt>
+      <dt>В ES6 се въвежда и така наречения "<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template string</a>", където низа се огражда в <code><b class="note">`</b> и <span class="note">`</span></code> (<a href="https://superuser.com/questions/254076/how-do-i-type-the-tick-and-backtick-characters-on-windows" title="how-do-i-type-the-tick-and-backtick-characters-on-windows">back-ticks</a>).</dt>
       <dt>Те добавят възможност в низ, да въвеждаме нов (enter) ред</dt>
       <pre style="font-size: .6em; width: 110%;"><code rel="JS" class="js">
-        let lyrics = `В късна нощ — преди години — сам над книгите старинни,
-                безотраден, вниквах, жаден, в знания незнайни тук; —
-                скръбен, търсех без сполука мир във тайната наука —
+        let lyrics = `В късна нощ - преди години - сам над книгите старинни,
+                безотраден, вниквах, жаден, в знания незнайни тук; -
+                скръбен, търсех без сполука мир във тайната наука -
                 но оборен в сънна скука, чух внезапно бавен звук.`
       </code></pre>
       <dt>както и да се изчисляват изрази и интерполират променливи:</dt>
@@ -393,7 +393,7 @@
     <p>или какво можем да правим с променливите?</p>
     <a href="http://www.w3schools.com/jsref/jsref_operators.asp">http://www.w3schools.com/jsref/jsref_operators.asp</a>
   </section>
-  <section><h3>Аритметични оператори (Aritmetic operators)</h3>
+  <section><h3>Аритметични оператори (Arithmetic operators)</h3>
     <ul class="fa">
       <li>Събиране: '<code class="note">+</code>'
         <pre><code rel="JS" class="js">
@@ -422,7 +422,7 @@
       </li>
     </ul>
   </section>
-  <section><h3>Аритметични оператори (Aritmetic operators)</h3>
+  <section><h3>Аритметични оператори (Arithmetic operators)</h3>
     <ul class="fa">
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()">Делене по Модул (остатък)</a>: '<code class="note">%</code>'
         <p>Връща остатъка от целочислено делене</p>
@@ -434,11 +434,11 @@
         </code></pre>
       </li>
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Exponentiation_(**)">Степенуване</a>: '<code class="note">**</code>'
-        <p class="note">Въвежда се от 2016г. в <b>ES7</b> и работи само с най-новите версии на браузерите </p>
+        <p class="note">Въвежда се от 2016г. в <b>ES7</b> и работи само с най-новите версии на браузърите </p>
         <pre><code rel="JS" class="js">
           console.log(2**10); //1024
         </code></pre>
-        <p>За по-стари браузери използваме Math.power()</p>
+        <p>За по-стари браузъри използваме Math.power()</p>
         <pre><code rel="JS" class="js">
             console.log(Math.pow(2,10)); //1024
         </code></pre>
@@ -529,7 +529,7 @@
   </section>
   <section><h3>Оператор за присвояване (Assignment operator)</h3>
     <dl class="fa">
-      <dt>Операцията "присвояване" връща стойност! И това е стойноста, която ще се запише в LHS променливата</dt>
+      <dt>Операцията "присвояване" връща стойност! И това е стойността, която ще се запише в LHS променливата</dt>
       <dt>Поради това, можем да имаме няколко оператора за присвояване в израз:</dt>
     </dl>
     <pre><code rel="JS" class="js">
@@ -1058,10 +1058,10 @@
     <dl class="fa">
       <dt><span class="note">Expression</span> е израз, който <span class="note">може да бъде изчислен до конкретна стойност</span> от някой от примитивните типове. Expression може да се сложи на всяко едно място, където бихме могли да зададем стойност.
         <pre><code id="test" rel="JS" class="js">
-          2+3;    // 2+3 е Expresion
-          x = 5;    // x = 5 e Expresion
-          console.log(x**6-x) // x**6-x e Expresion
-          x = y = 5;  // тук имаме 2 Expresions: (y = 5) и (x = 5)
+          2+3;    // 2+3 е Expression
+          x = 5;    // x = 5 e Expression
+          console.log(x**6-x) // x**6-x e Expression
+          x = y = 5;  // тук имаме 2 Expressions: (y = 5) и (x = 5)
         </code></pre>
       </dt>
     </dl>
@@ -1093,7 +1093,7 @@
   <section id="HW2"><h3>HW2: Comparison Operators & Conditional Statement</h3>
     <dl class="fa">
       <dt>Описанието на задачите е дадено като коментар в съответните HTML и JS полета.</dt>
-      <dt>Работете върху дадения код като добавите код, където е необходимо и изпратете линк на вашия Пен.</p>
+      <dt>Работете върху дадения код като добавите код, където е необходимо и изпратете линк на вашия Пен.</dt>
     </dl>
     <iframe height="300" scrolling="no" title="HW2: Comparison Operators & Conditional Statement" src="//codepen.io/webdesigncourse/embed/BLYJGJ/?height=300&theme-id=20230&default-tab=js,result&embed-version=2" frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href="https://codepen.io/webdesigncourse/pen/BLYJGJ/">HW2: Comparison Operators & Conditional Statement</a> by Iva Popova (<a href="https://codepen.io/webdesigncourse">@webdesigncourse</a>) on <a href="https://codepen.io">CodePen</a>.</iframe>
   </section>
